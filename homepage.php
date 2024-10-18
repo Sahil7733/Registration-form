@@ -18,7 +18,7 @@ include("connect.php");
        Hello  <?php 
        if(isset($_SESSION['email'])){
         $email=$_SESSION['email'];
-        $query=mysqli_query($conn, "SELECT users.* FROM `users` WHERE users.email='$email'");
+        $query=mysqli_query($conn, "SELECT registration_data.* FROM `registration_data` WHERE registration_data.email='$email'");
         while($row=mysqli_fetch_array($query)){
             echo $row['firstName'].' '.$row['lastName'];
         }
